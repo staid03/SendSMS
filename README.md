@@ -13,8 +13,9 @@
  
 | Version       | Date          | Author  | Notes |
 |:------------- |:-------------:|:-------:|:------|
-| 0.1      	| 09-JUN-18 	| Staid03 |Initial|
-| 0.2     	| 10-JUN-18   | Staid03 |Updating mobile phone options to include a <br>starting char of + or 6 (rather than just '0')| 
+| 0.1      	    | 09-JUN-18 	  | Staid03 |Initial|
+| 0.2     	     | 10-JUN-18     | Staid03 |Updated possible mobile number prefixes (0,6,+)<br>Updated default CC address<br>Allowed empty recipient boxes| 
+|              |            |     |      |
 
 <h4>Script Function:</h4>
 GUI for sending text messages at work to staff
