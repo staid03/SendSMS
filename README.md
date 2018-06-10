@@ -9,15 +9,14 @@
 <li> Language:       English
 <li> Platform:       Windows 10
 <li> Author:         staid03
-<br>
+<br><br>
  
 | Version       | Date          | Author  | Notes |
 |:------------- |:-------------:|:-------:|:------|
 | 0.1      	| 09-JUN-18 	| Staid03 |Initial|
 | 0.2     	| 10-JUN-18   | Staid03 |Updating mobile phone options to include a <br>starting char of + or 6 (rather than just '0')| 
-<br>
+
 <h4>Script Function:</h4>
 GUI for sending text messages at work to staff
-<br>
- <h4>functionality to add:</h4>
+<h4>functionality to add:</h4>
 <li> null
