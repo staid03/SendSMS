@@ -5,8 +5,11 @@
 ; Language:       English
 ; Platform:       Windows 10
 ; Author:         staid03
-; Version   Date        Author       Comments
-;     0.1   09-JUN-18   staid03      Initial
+; Version	Date		Author		Comments
+;	0.1		09-JUN-18	staid03		Initial
+;	0.2		10-JUN-18	staid03		Updated possible mobile number prefixes (0,6,+)
+;									Updated default CC address
+;									Allowed empty recipient boxes
 ;
 ;
 ; Script Function:
@@ -22,7 +25,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #singleinstance , force
 
 GlobalVariables:
-myMobile = myMobile
+myMobile = myMobile@makebelieve.com
 
 
 Main:
@@ -60,6 +63,11 @@ makeRecipientString(recipientInput)
 	SMSService = @smsservice.net
 	
 	recipientInputStringLength := StrLen(recipientInput)
+	ifequal , recipientInputStringLength , 0
+	{
+		return
+	}
+	
 	ifless , recipientInputStringLength , 10
 	{
 		msg = The overall string is too short to be meaningful
@@ -90,11 +98,11 @@ makeRecipientString(recipientInput)
 		}
 		
 		;check if mobile number or email address
-		ifequal , recipientStringLength , 10
+		if (recipientStringLength <= 12)
 		{		
-			;check the first character is a 0 or not
+			;check the first character is a 0,6,+ symbol or not (each are possible mobile prefixes)
 			stringleft , mobileNumberCheck , recipient , 1
-			ifnotequal , mobileNumberCheck , 0
+			if not (mobileNumberCheck = 0 or mobileNumberCheck = + or mobileNumberCheck = 6)
 			{
 				msg = %recipient% is not a valid mobile number
 				errorMSG(msg)	
